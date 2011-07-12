@@ -1,0 +1,298 @@
+\documentclass{letter}
+\usepackage{amssymb}
+
+%%%%%%%%%% Start TeXmacs macros
+\usepackage[german]{babel}
+\newcommand{\noplus}{}
+\newcommand{\paragraph}[1]{\smallskip
+
+\noindent\textbf{#1}}
+\newcommand{\section}[1]{\medskip\bigskip
+
+\noindent\textbf{\LARGE #1}}
+\newcommand{\subsection}[1]{\medskip\bigskip
+
+\noindent\textbf{\Large #1}}
+\newcommand{\subsubsection}[1]{\medskip\bigskip
+
+\noindent\textbf{\large #1}}
+\newcommand{\tmem}[1]{{\em #1\/}}
+\newcommand{\tmstrong}[1]{\textbf{#1}}
+%%%%%%%%%% End TeXmacs macros
+
+\begin{document}
+
+\section{Sortieren}
+
+\subsection{\"Ubersicht Sortieralgorithmen}
+
+\begin{table}[h]
+  \begin{tabular}{|c|c|c|c|c|c|c|}
+    \hline
+    {\tmstrong{Name}} & {\tmstrong{Best Case}} & {\tmstrong{Average Case}} &
+    {\tmstrong{Worst Case}} & {\tmstrong{Stabil?}} & {\tmstrong{In-Place?}} &
+    {\tmstrong{Vergleich?}}\\
+    \hline
+    Bubblesort & $O \left( n \right)$ & $O \left( n^2 \right)$ & $O \left( n^2
+    \right)$ & ja & ja & ja\\
+    \hline
+    Insertionsort & $\Theta \left( n \right)$ & $\Theta \left( n^2 \right)$ &
+    $\Theta \left( n^2 \right)$ & ja & ja & ja\\
+    \hline
+    Selectionsort & $O \left( n^2 \right)$ & $O \left( n^2 \right)$ & $O
+    \left( n^2 \right)$ & nein & ja & ja\\
+    \hline
+    Mergesort & $\Theta \left( n \cdot \lg n \right)$ &  &  & ja & nein & ja\\
+    \hline
+    Quicksort & $\Theta \left( n \cdot \lg n \right)$ & $\Theta \left( n \cdot
+    \lg n \right)$ & $\Theta \left( n^2 \right)$ & nein & nein ($+ \log n$) &
+    ja\\
+    \hline
+    Heapsort & $\Theta \left( n \cdot \lg n \right)$ &  &  & nein & ja & ja\\
+    \hline
+    Radixsort & $\Theta \left( d \left( n + k \right) \right)$ & $\Theta
+    \left( d \left( n + k \right) \right)$ & $\Theta \left( d \left( n + k
+    \right) \right)$ & ja & nein ($+ n$) & nein\\
+    \hline
+    Countingsort & $\Theta \left( n + k \right)$ &  &  & ja & nein ($+ \left(
+    n + k \right)$) & nein\\
+    \hline
+  \end{tabular}
+  \caption{\"Ubersicht der Sortierverfahren. $n$ = Anzahl zu sortierender
+  Elemente, $k$ = Anzahl diskreter Werte, die von einem Schl\"ussel
+  (Countingsort) bzw. einer Stelle des Schl\"ussels (Radixsort) angenommen
+  werden k\"onnen, $d$ = Anzahl Stellen des Schl\"ussels.}
+\end{table}
+
+In der Praxis ist Quicksort meistens schneller als Heapsort, ben\"otigt aber
+asymptotisch mehr zus\"atzlichen Speicher.
+
+\subsection{Graphen}
+
+\subsubsection{Darstellung}
+
+\begin{table}[h]
+  \begin{tabular}{|l|l|l|}
+    \hline
+    & Vorteile & Nachteile\\
+    \hline
+    Adjazenzliste & kompakt, Kantenoperationen & Kantensuche, Cache-Misses\\
+    \hline
+    Adjazenzmatrix & Operationen in $O \left( 1 \right)$ & Speicherverbrauch,
+    Navigation\\
+    \hline
+    Adjazenzfeld & Platzsparend, Navigation & \"Anderungen aufwendig\\
+    \hline
+  \end{tabular}
+  \caption{Darstellungsm\"oglichkeiten von Graphen}
+\end{table}
+
+\section{Laufzeiten}
+
+\subsection{Heaps}
+
+\begin{table}[h]
+  \begin{tabular}{|c|c|}
+    \hline
+    GetMax/Min & $O \left( 1 \right)$\\
+    \hline
+    ExtractMax/Min & $O \left( \lg n \right)$\\
+    \hline
+    Insert & $O \left( \lg n \right)$\\
+    \hline
+    Erzeugen durch Einf\"ugen & $\Theta \left( n \lg n \right)$\\
+    \hline
+    Erzeugen durch ,,Heapify`` & $O \left( n \right)$\\
+    \hline
+  \end{tabular}
+  \caption{Laufzeiten von Heap-Operationen}
+\end{table}
+
+\subsection{Felder}
+
+\begin{table}[h]
+  \begin{tabular}{|c|c|c|c|c|c|c|}
+    \hline
+    {\tmstrong{Operation}} & {\tmstrong{Liste (doppelt)}} & {\tmstrong{Liste
+    (einfach)}} & {\tmstrong{Stack}} & {\tmstrong{Queue}} & {\tmstrong{Array}}
+    & {\tmstrong{unbeschr. Feld}}\\
+    \hline
+    Search & $O \left( n \right)$ & $O \left( n \right)$ &  &  & $O \left( n
+    \right)$ & $O \left( n \right)$\\
+    \hline
+    Select($k$) &  &  &  &  & erwartet $O \left( n \right)$ & erwartet $O
+    \left( n \right)$\\
+    \hline
+    Insert-Front & $O \left( 1 \right)$ & $O \left( 1 \right)$ &  &  &  & \\
+    \hline
+    Delete & $O \left( 1 \right)$ & $O \left( n \right)$ &  &  &  & \\
+    \hline
+    Push/Pop &  &  & $O \left( 1 \right)$ &  &  & amortisiert $O \left( 1
+    \right)$\\
+    \hline
+    Enqueue/Dequeue &  &  &  & $O \left( 1 \right)$ &  & \\
+    \hline
+    isEmpty & $O \left( 1 \right)$ & $O \left( 1 \right)$ & $O \left( 1
+    \right)$ & $O \left( 1 \right)$ &  & \\
+    \hline
+  \end{tabular}
+  \caption{Laufzeiten von Feldoperationen. Select($k$) w\"ahlt das Element mit
+  Rang $k$ aus (Quickselect!)}
+\end{table}
+
+\subsection{Hashtabellen}
+
+Falls
+\begin{itemize}
+  \item einfaches gleichm\"assiges Hashing verwendet wird
+  
+  \item eine doppelt verkettete Liste zur Kollisionsaufl\"osung verwendet wird
+  
+  \item die Anzahl der Slots proportional zur Anzahl der gespeicherten
+  Elemente ist
+\end{itemize}
+dann ist die Anzahl der Kollisionen {\tmem{erwartet}} in $O \left( 1 \right)$
+und die Laufzeiten betragen:
+
+\begin{table}[h]
+  \begin{tabular}{|c|c|c|c|}
+    \hline
+    Operation & Best Case & Average Case & Worst Case\\
+    \hline
+    SEARCH & $O \left( 1 \right)$ & $O \left( 1 \right)$ & $\Theta \left( n
+    \right)$\\
+    \hline
+    INSERT &  & $O \left( 1 \right)$ & \\
+    \hline
+    DELETE &  & $O \left( 1 \right)$ & \\
+    \hline
+  \end{tabular}
+  \caption{Laufzeiten von Hashoperationen}
+\end{table}
+
+\subsection{Suchb\"aume}
+
+\begin{table}[h]
+  \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    {\tmstrong{Datenstruktur}} & {\tmstrong{Operation}} & {\tmstrong{Best
+    Case}} & {\tmstrong{Average Case}} & {\tmstrong{Worst Case}}\\
+    \hline
+    Bin\"arer Suchbaum & Search &  & $O \left( \lg n \right)$ [balanciert] &
+    $O \left( n \right)$\\
+    \hline
+    & Insert &  & $O \left( \lg n \right)$ [balanciert] & $O \left( n
+    \right)$\\
+    \hline
+    & Delete &  & $O \left( \lg n \right)$ [balanciert] & $O \left( n
+    \right)$\\
+    \hline
+    Rot-Schwarz-Baum & Search &  & $O \left( \lg n \right)$ & $O \left( \lg n
+    \right)$\\
+    \hline
+    & Insert &  & $O \left( \lg n \right)$ & $O \left( \lg n \right)$\\
+    \hline
+    & Delete &  & $O \left( \lg n \right)$ & $O \left( \lg n \right)$\\
+    \hline
+    B-Baum & Search &  & $O \left( \lg m \cdot \lg n \right)$ & \\
+    \hline
+    (max. $m$ Eintr\"age/Knoten) & Insert &  &  & $O \left( m \cdot \lg n
+    \right)$\\
+    \hline
+    & Delete &  &  & $O \left( m \cdot \lg n \right)$\\
+    \hline
+  \end{tabular}
+  \caption{}
+\end{table}
+
+\subsection{Graphenalgorithmen}
+
+\begin{table}[h]
+  \begin{tabular}{|c|c|c|}
+    \hline
+    Tiefensuche & $\Theta \left( \left| V \right| + \left| E \right| \right)$
+    & \\
+    \hline
+    Topologische Sortierung & $\Theta \left( \left| V \right| + \left| E
+    \right| \right)$ & benutzt Tiefensuche\\
+    \hline
+    Breitensuche & $O \left( \left| V \right| + \left| E \right| \right)$ & \\
+    \hline
+    Bellman-Ford & $O \left( \left| V \right| \cdot \left| E \right| \right)$
+    & \\
+    \hline
+    DAG\_SHORTEST\_PATHS & $\Theta \left( \left| V \right| + \left| E \right|
+    \right)$ & benutzt top. Sortierung\\
+    \hline
+    Dijkstra mit bin\"arem Min-Heap & $O \left( \left( \left| V \right| +
+    \left| E \right| \right) \cdot \lg \left| V \right| \right)$ & \\
+    \hline
+    Dijkstra mit Fibonacci-Heap & $O \left( \left| V \right| \cdot \lg \left|
+    V \right| + \left| E \right| \right)$ & \\
+    \hline
+    MST-Kruskal & $O \left( \left| E \right| \cdot \lg \left| V \right|
+    \right)$ & \\
+    \hline
+    MST-Prim & $O \left( \left| E \right| \cdot \lg \left| V \right| \right)$
+    & mit bin\"arem Min-Heap\\
+    \hline
+  \end{tabular}
+  \caption{Laufzeiten von Graphenalgorithmen}
+\end{table}
+
+In {\tmem{zusammenh\"angenden}} Graphen laufen Tiefensuche, Breitensuche etc.
+in $O \left( \left| E \right| \right)$, da f\"ur die Anzahl der Kanten gilt
+$\left| E \right| \geqslant \left| V \right| + 1$, somit $\left| V \right| \in
+O \left( \left| E \right| \right)$.
+
+\paragraph{Algorithmus von Kruskal}
+
+Benutzt Union-Find-Datenstrukturen (Strukturen zur Verwaltung disjunkter
+Mengen), um den MST aufzubauen: Zu Anfang wird f\"ur jeden Knoten eine eigene
+Komponente erzeugt ($n$ mal MAKE\_SET), dann wird in aufsteigender Reihenfolge
+der Kantengewichte jede Kante, die zwei Knoten aus unterschiedlichen Mengen
+verbindet, zum MST hinzugef\"ugt. Diese Mengen werden dann vereinigt.
+
+{\tmstrong{Vorteile:}} Gut f\"ur Graphen mit $\left| E \right| \in O \left(
+\left| V \right| \right)$
+
+\paragraph{Algorithmus von Prim -- MST von einem Knoten aus bilden}
+
+Benutzt eine Priorit\"atswarteschlange, in der die Knoten des Graphen
+gespeichert sind. Der Schl\"ussel ist dabei die minimale Distanz zum aktuellen
+MST. In jedem Schritt wird die Kante zum Knoten mit minimaler Distanz zum MST
+in den Spannbaum eingef\"ugt.
+
+{\tmstrong{Vorteile:}} Gut f\"ur Graphen mit vielen Kanten, asymptotisch gut
+
+\subsection{Zeugs}
+
+\subsubsection{Logarithmengesetze}
+
+\begin{itemize}
+  \item $\log_a  \left( x \cdot y \right) = \log_a x \noplus + \log_a y$
+  
+  \item $\log_a \frac{x}{y} = \log_a x - \log_a y$
+  
+  \item $\log_a x^r = r \cdot \log_a x$
+  
+  \item $\log_b r = \frac{\log_a r}{\log_a b}$
+  
+  \item $\log_x y = \frac{1}{\log_y x}$
+\end{itemize}
+
+\subsubsection{Dynamische Programmierung}
+
+Zwei Ans\"atze:
+\begin{description}
+  \item[Bottom-Up-Methode] Kleinste Teilprobleme zuerst l\"osen, Ergebnisse in
+  Tabelle speichern. Beim L\"osen eines Teilproblems stehen die L\"osungen
+  aller Unterprobleme zur Verf\"ugung.
+  
+  \item[Top-Down-Memoisation] Problem rekursiv l\"osen, dabei jedoch
+  Zwischenergebnisse in Tabelle speichern und vor dem L\"osen eines
+  Teilproblems nachschauen, ob das Zwischenergebnis schon einmal vorberechnet
+  wurde.
+\end{description}
+
+\end{document}
