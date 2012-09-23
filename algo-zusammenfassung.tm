@@ -7,7 +7,7 @@
 
   <subsection|Übersicht Sortieralgorithmen>
 
-  <big-table|<block*|<tformat|<cwith|5|5|2|4|cell-row-span|1>|<cwith|5|5|2|4|cell-col-span|3>|<cwith|8|8|2|4|cell-row-span|1>|<cwith|8|8|2|4|cell-col-span|3>|<cwith|2|2|3|4|cell-row-span|1>|<cwith|2|2|3|4|cell-col-span|2>|<cwith|3|3|3|4|cell-row-span|1>|<cwith|3|3|3|4|cell-col-span|2>|<cwith|4|4|3|4|cell-row-span|1>|<cwith|4|4|3|4|cell-col-span|2>|<cwith|6|6|2|3|cell-row-span|1>|<cwith|6|6|2|3|cell-col-span|2>|<cwith|9|9|2|4|cell-row-span|1>|<cwith|9|9|2|4|cell-col-span|3>|<cwith|7|7|2|4|cell-row-span|1>|<cwith|7|7|2|4|cell-col-span|3>|<table|<row|<cell|<strong|Name>>|<cell|<strong|Best
+  <big-table|<block*|<tformat|<cwith|5|5|2|4|cell-row-span|1>|<cwith|5|5|2|4|cell-col-span|3>|<cwith|8|8|2|4|cell-row-span|1>|<cwith|8|8|2|4|cell-col-span|3>|<cwith|2|2|3|4|cell-row-span|1>|<cwith|2|2|3|4|cell-col-span|2>|<cwith|3|3|3|4|cell-row-span|1>|<cwith|3|3|3|4|cell-col-span|2>|<cwith|4|4|3|4|cell-row-span|1>|<cwith|4|4|3|4|cell-col-span|2>|<cwith|6|6|2|3|cell-row-span|1>|<cwith|6|6|2|3|cell-col-span|2>|<cwith|9|9|2|4|cell-row-span|1>|<cwith|9|9|2|4|cell-col-span|3>|<cwith|7|7|2|4|cell-row-span|1>|<cwith|7|7|2|4|cell-col-span|3>|<cwith|4|4|2|3|cell-row-span|1>|<cwith|4|4|2|3|cell-col-span|3>|<table|<row|<cell|<strong|Name>>|<cell|<strong|Best
   Case>>|<cell|<strong|Average Case>>|<cell|<strong|Worst
   Case>>|<cell|<strong|Stabil?>>|<cell|<strong|In-Place?>>|<cell|<strong|Vergleich?>>>|<row|<cell|Bubblesort>|<cell|<math|O<around*|(|n|)>>>|<cell|<math|O<around*|(|n<rsup|2>|)>>>|<cell|<math|O<around*|(|n<rsup|2>|)>>>|<cell|ja>|<cell|ja>|<cell|ja>>|<row|<cell|Insertionsort>|<cell|<math|\<Theta\><around*|(|n|)>>>|<cell|<math|\<Theta\><around*|(|n<rsup|2>|)>>>|<cell|<math|\<Theta\><around*|(|n<rsup|2>|)>>>|<cell|ja>|<cell|ja>|<cell|ja>>|<row|<cell|Selectionsort>|<cell|<math|O<around*|(|n<rsup|2>|)>>>|<cell|<math|O<around*|(|n<rsup|2>|)>>>|<cell|<math|O<around*|(|n<rsup|2>|)>>>|<cell|nein>|<cell|ja>|<cell|ja>>|<row|<cell|Mergesort>|<cell|<math|\<Theta\><around*|(|n\<cdot\>lg
   n|)>>>|<cell|>|<cell|>|<cell|ja>|<cell|nein>|<cell|ja>>|<row|<cell|Quicksort>|<cell|<math|\<Theta\><around*|(|n\<cdot\>lg
@@ -76,7 +76,76 @@
 
   <big-table|<block*|<tformat|<table|<row|<cell|Operation>|<cell|Best
   Case>|<cell|Average Case>|<cell|Worst Case>>|<row|<cell|SEARCH>|<cell|<math|O<around*|(|1|)>>>|<cell|<math|O<around*|(|1|)>>>|<cell|<math|\<Theta\><around*|(|n|)>>>>|<row|<cell|INSERT>|<cell|>|<cell|<math|O<around*|(|1|)>>>|<cell|>>|<row|<cell|DELETE>|<cell|>|<cell|<math|O<around*|(|1|)>>>|<cell|>>>>>|Laufzeiten
-  von Hashoperationen>
+  von Hashoperationen mit Verkettung>
+
+  Annahme: Hashwertberechnung in <math|\<Theta\><around*|(|1|)>>.
+
+  Belegungsfaktor <math|\<alpha\>=<frac|m|n>> gibt die mittlere Länge einer
+  Liste an. Erwartete Anzahl Sondierungen bei erfolgloser Suche beträgt also
+  <math|\<alpha\>>.
+
+  Die erwartete Anzahl Sondierungen für eine erfolgreiche Suche beträgt
+  <math|1+<frac|\<alpha\>|2>+<frac|\<alpha\>|2*m>>.
+  (<math|\<Theta\><around*|(|1+\<alpha\>|)>>)
+
+  <strong|Einfügen eines Elements findet am Anfang der verketteten Liste
+  statt!>
+
+  \ 
+
+  <paragraph|Offene Adressierung>
+
+  Bei Verwendung von offener Adressierung, Belegungsfaktor <math|\<alpha\>>:
+
+  <big-table|<block*|<tformat|<table|<row|<cell|Operation>|<cell|Anzahl
+  Sondierungen im Mittel>>|<row|<cell|Suche
+  (erfolglos)>|<cell|<math|<frac|1|1-\<alpha\>>>>>|<row|<cell|Suche
+  (erfolgreich)>|<cell|<math|<frac|1|\<alpha\>>\<cdot\>ln<around*|(|1-\<alpha\>|)>>>>|<row|<cell|Einfügen>|<cell|<math|<frac|1|1-\<alpha\>>>>>>>>|Laufzeiten
+  von Hashoperationen mit offener Adressierung. Es wird angenommen, dass nach
+  jedem Schlüssel mit gleicher Wahrscheinlichkeit gesucht wird.>
+
+  Offene Adressierung bietet Speichervorteile (Platz für Zeiger bei
+  verketteten Listen kann für zusätzlichen Speicher genutzt werden) und ist
+  Cache-effizienter.
+
+  <subsubsection|Hashfunktionen>
+
+  <\description>
+    <item*|Divisionsmethode><math|h<around*|(|k|)>=k mod m>
+
+    Geeignete Wahl für <math|m> (Hashtabellengrösse): Primzahl, die nicht
+    nahe an einer Zweierpotenz liegt.
+
+    <item*|Multiplikationsmethode><math|h<around*|(|k|)>=<around*|\<lfloor\>|m*<around*|(|k\<cdot\>A
+    mod 1|)>|\<rfloor\>>>
+
+    wobei <math|A> eine Konstante zwischen 0 und 1 ist und \R<math|mod 1>``
+    den gebrochenen Rest bezeichnet.
+  </description>
+
+  <subsubsection|Offene Adressierung>
+
+  <math|h<rprime|'><around*|(|k|)>> ist hier eine Hilfshashfunktion.
+
+  Alle drei Varianten bieten kein universelles Hashing, da sie maximal
+  <math|m<rsup|2>> (statt <math|m!>) Sondierungssequenzen liefern.
+
+  <\description>
+    <item*|Lineares Sondieren><math|h<around*|(|k\<nocomma\>,i|)>=<around*|(|h<rprime|'><around*|(|k|)>+i|)>
+    mod m>
+
+    <item*|Quadratisches Sondieren><math|h<around*|(|k,i|)>=<around*|(|h<rprime|'><around*|(|k|)>+a<rsub|1>\<cdot\>i+a<rsub|2>\<cdot\>i<rsup|2>|)>mod
+    m>
+
+    <item*|Doppeltes Hashing><math|h<around*|(|k,i|)>=<around*|(|h<rprime|'><around*|(|k|)>+i\<cdot\>h<rprime|''><around*|(|k|)>|)>>
+
+    mit zusätzlicher Hashfunktion <math|h<rprime|''><around*|(|k|)>>, deren
+    Wert teilerfremd zu <math|h<rprime|'><around*|(|k|)>> sein muss.
+
+    Wenn <math|m> Primzahl: <math|h<rprime|'><around*|(|k|)>=k mod m>
+    (Divisionsmethode), <math|h<rprime|''><around*|(|k|)>=1+<around*|(|k mod
+    <around*|(|m-1|)>|)>> erfüllen diese Bedingung.
+  </description>
 
   <subsection|Suchbäume>
 
@@ -175,16 +244,20 @@
     <associate|auto-11|<tuple|4|2>>
     <associate|auto-12|<tuple|2.3|2>>
     <associate|auto-13|<tuple|5|2>>
-    <associate|auto-14|<tuple|2.4|2>>
+    <associate|auto-14|<tuple|2.3.0.1|2>>
     <associate|auto-15|<tuple|6|2>>
-    <associate|auto-16|<tuple|2.5|2>>
-    <associate|auto-17|<tuple|7|?>>
-    <associate|auto-18|<tuple|2.5.0.1|?>>
-    <associate|auto-19|<tuple|2.5.0.2|?>>
+    <associate|auto-16|<tuple|2.3.1|2>>
+    <associate|auto-17|<tuple|2.3.2|?>>
+    <associate|auto-18|<tuple|2.4|?>>
+    <associate|auto-19|<tuple|7|?>>
     <associate|auto-2|<tuple|1.1|1>>
-    <associate|auto-20|<tuple|2.6|?>>
-    <associate|auto-21|<tuple|2.6.1|?>>
-    <associate|auto-22|<tuple|2.6.2|?>>
+    <associate|auto-20|<tuple|2.5|?>>
+    <associate|auto-21|<tuple|8|?>>
+    <associate|auto-22|<tuple|2.5.0.1|?>>
+    <associate|auto-23|<tuple|2.5.0.2|?>>
+    <associate|auto-24|<tuple|2.6|?>>
+    <associate|auto-25|<tuple|2.6.1|?>>
+    <associate|auto-26|<tuple|2.6.2|?>>
     <associate|auto-3|<tuple|1|1>>
     <associate|auto-4|<tuple|1.2|1>>
     <associate|auto-5|<tuple|1.2.1|1>>
@@ -205,15 +278,24 @@
       angenommen werden können, <with|mode|<quote|math>|d> = Anzahl Stellen
       des Schlüssels.|<pageref|auto-3>>
 
-      <tuple|normal|Laufzeiten von Heap-Operationen|<pageref|auto-6>>
+      <tuple|normal|Darstellungsmöglichkeiten von Graphen|<pageref|auto-6>>
 
-      <tuple|normal|Laufzeiten von Feldoperationen|<pageref|auto-8>>
+      <tuple|normal|Laufzeiten von Heap-Operationen|<pageref|auto-9>>
 
-      <tuple|normal||<pageref|auto-10>>
+      <tuple|normal|Laufzeiten von Feldoperationen.
+      Select(<with|mode|<quote|math>|k>) wählt das Element mit Rang
+      <with|mode|<quote|math>|k> aus (Quickselect!)|<pageref|auto-11>>
 
-      <tuple|normal||<pageref|auto-12>>
+      <tuple|normal|Laufzeiten von Hashoperationen mit
+      Verkettung|<pageref|auto-13>>
 
-      <tuple|normal||<pageref|auto-14>>
+      <tuple|normal|Laufzeiten von Hashoperationen mit offener Adressierung.
+      Es wird angenommen, dass nach jedem Schlüssel mit gleicher
+      Wahrscheinlichkeit gesucht wird.|<pageref|auto-14>>
+
+      <tuple|normal||<pageref|auto-18>>
+
+      <tuple|normal|Laufzeiten von Graphenalgorithmen|<pageref|auto-20>>
     </associate>
     <\associate|toc>
       <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|Sortieren>
@@ -224,35 +306,63 @@
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-2>>
 
+      <with|par-left|<quote|1.5fn>|Graphen
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-4>>
+
+      <with|par-left|<quote|3fn>|Darstellung
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-5>>
+
       <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|Laufzeiten>
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-4><vspace|0.5fn>
+      <no-break><pageref|auto-7><vspace|0.5fn>
 
       <with|par-left|<quote|1.5fn>|Heaps <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-5>>
+      <no-break><pageref|auto-8>>
 
       <with|par-left|<quote|1.5fn>|Felder
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-7>>
+      <no-break><pageref|auto-10>>
 
       <with|par-left|<quote|1.5fn>|Hashtabellen
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-9>>
+      <no-break><pageref|auto-12>>
+
+      <with|par-left|<quote|3fn>|Hashfunktionen
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-15>>
+
+      <with|par-left|<quote|3fn>|Offene Adressierung
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-16>>
 
       <with|par-left|<quote|1.5fn>|Suchbäume
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-11>>
+      <no-break><pageref|auto-17>>
 
       <with|par-left|<quote|1.5fn>|Graphenalgorithmen
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-13>>
+      <no-break><pageref|auto-19>>
+
+      <with|par-left|<quote|6fn>|Algorithmus von Kruskal
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-21><vspace|0.15fn>>
+
+      <with|par-left|<quote|6fn>|Algorithmus von Prim -- MST von einem Knoten
+      aus bilden <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-22><vspace|0.15fn>>
 
       <with|par-left|<quote|1.5fn>|Zeugs <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-15>>
+      <no-break><pageref|auto-23>>
 
       <with|par-left|<quote|3fn>|Logarithmengesetze
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-16>>
+      <no-break><pageref|auto-24>>
+
+      <with|par-left|<quote|3fn>|Dynamische Programmierung
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-25>>
     </associate>
   </collection>
 </auxiliary>
