@@ -5,7 +5,7 @@
 <\body>
   <section|Sortieren>
 
-  <subsection|Übersicht Sortieralgorithmen>
+  <subsection|bersicht Sortieralgorithmen>
 
   <big-table|<block*|<tformat|<cwith|5|5|2|4|cell-row-span|1>|<cwith|5|5|2|4|cell-col-span|3>|<cwith|8|8|2|4|cell-row-span|1>|<cwith|8|8|2|4|cell-col-span|3>|<cwith|2|2|3|4|cell-row-span|1>|<cwith|2|2|3|4|cell-col-span|2>|<cwith|3|3|3|4|cell-row-span|1>|<cwith|3|3|3|4|cell-col-span|2>|<cwith|4|4|3|4|cell-row-span|1>|<cwith|4|4|3|4|cell-col-span|2>|<cwith|6|6|2|3|cell-row-span|1>|<cwith|6|6|2|3|cell-col-span|2>|<cwith|9|9|2|4|cell-row-span|1>|<cwith|9|9|2|4|cell-col-span|3>|<cwith|7|7|2|4|cell-row-span|1>|<cwith|7|7|2|4|cell-col-span|3>|<cwith|4|4|2|3|cell-row-span|1>|<cwith|4|4|2|3|cell-col-span|3>|<table|<row|<cell|<strong|Name>>|<cell|<strong|Best
   Case>>|<cell|<strong|Average Case>>|<cell|<strong|Worst
@@ -16,14 +16,14 @@
   (<math|+log n>)>|<cell|ja>>|<row|<cell|Heapsort>|<cell|<math|\<Theta\><around*|(|n\<cdot\>lg
   n|)>>>|<cell|>|<cell|>|<cell|nein>|<cell|ja>|<cell|ja>>|<row|<cell|Radixsort>|<cell|<math|\<Theta\><around*|(|d<around*|(|n+k|)>|)>>>|<cell|<math|\<Theta\><around*|(|d<around*|(|n+k|)>|)>>>|<cell|<math|\<Theta\><around*|(|d<around*|(|n+k|)>|)>>>|<cell|ja>|<cell|nein
   (<math|+n>)>|<cell|nein>>|<row|<cell|Countingsort>|<cell|<math|\<Theta\><around*|(|n+k|)>>>|<cell|>|<cell|>|<cell|ja>|<cell|nein
-  (<math|+<around*|(|n+k|)>>)>|<cell|nein>>>>>|Übersicht der
+  (<math|+<around*|(|n+k|)>>)>|<cell|nein>>>>>|bersicht der
   Sortierverfahren. <math|n> = Anzahl zu sortierender Elemente, <math|k> =
-  Anzahl diskreter Werte, die von einem Schlüssel (Countingsort) bzw. einer
-  Stelle des Schlüssels (Radixsort) angenommen werden können, <math|d> =
-  Anzahl Stellen des Schlüssels.>
+  Anzahl diskreter Werte, die von einem Schlssel (Countingsort) bzw. einer
+  Stelle des Schlssels (Radixsort) angenommen werden knnen, <math|d> =
+  Anzahl Stellen des Schlssels.>
 
-  In der Praxis ist Quicksort meistens schneller als Heapsort, benötigt aber
-  asymptotisch mehr zusätzlichen Speicher.
+  In der Praxis ist Quicksort meistens schneller als Heapsort, bentigt aber
+  asymptotisch mehr zustzlichen Speicher.
 
   <subsection|Graphen>
 
@@ -33,7 +33,7 @@
   Kantenoperationen>|<cell|Kantensuche, Cache-Misses>>|<row|<cell|Adjazenzmatrix>|<cell|Operationen
   in <math|O<around*|(|1|)>>>|<cell|Speicherverbrauch,
   Navigation>>|<row|<cell|Adjazenzfeld>|<cell|Platzsparend,
-  Navigation>|<cell|Änderungen aufwendig>>>>>|Darstellungsmöglichkeiten von
+  Navigation>|<cell|nderungen aufwendig>>>>>|Darstellungsmglichkeiten von
   Graphen>
 
   <section|Laufzeiten>
@@ -42,7 +42,7 @@
 
   <big-table|<block*|<tformat|<cwith|3|3|1|2|cell-bborder|1pt>|<table|<row|<cell|GetMax/Min>|<cell|<math|O<around*|(|1|)>>>>|<row|<cell|ExtractMax/Min>|<cell|<math|O<around*|(|lg
   n|)>>>>|<row|<cell|Insert>|<cell|<math|O<around*|(|lg
-  n|)>>>>|<row|<cell|Erzeugen durch Einfügen>|<cell|<math|\<Theta\><around*|(|n*lg
+  n|)>>>>|<row|<cell|Erzeugen durch Einfgen>|<cell|<math|\<Theta\><around*|(|n*lg
   n|)>>>>|<row|<cell|Erzeugen durch \RHeapify``>|<cell|<math|O<around*|(|n|)>>>>>>>|Laufzeiten
   von Heap-Operationen>
 
@@ -54,7 +54,7 @@
   <math|O<around*|(|n|)>>>|<cell|erwartet
   <math|O<around*|(|n|)>>>>|<row|<cell|Insert-Front>|<cell|<with|mode|math|O<around*|(|1|)>>>|<cell|<with|mode|math|O<around*|(|1|)>>>|<cell|>|<cell|>|<cell|>|<cell|>>|<row|<cell|Delete>|<cell|<with|mode|math|O<around*|(|1|)>>>|<cell|<with|mode|math|O<around*|(|n|)>>>|<cell|>|<cell|>|<cell|>|<cell|>>|<row|<cell|Push/Pop>|<cell|>|<cell|>|<cell|<with|mode|math|O<around*|(|1|)>>>|<cell|>|<cell|>|<cell|amortisiert
   <math|O<around*|(|1|)>>>>|<row|<cell|Enqueue/Dequeue>|<cell|>|<cell|>|<cell|>|<cell|<with|mode|math|O<around*|(|1|)>>>|<cell|>|<cell|>>|<row|<cell|isEmpty>|<cell|<math|O<around*|(|1|)>>>|<cell|<with|mode|math|O<around*|(|1|)>>>|<cell|<with|mode|math|O<around*|(|1|)>>>|<cell|<with|mode|math|O<around*|(|1|)>>>|<cell|>|<cell|>>>>>|Laufzeiten
-  von Feldoperationen. Select(<math|k>) wählt das Element mit Rang <math|k>
+  von Feldoperationen. Select(<math|k>) whlt das Element mit Rang <math|k>
   aus (Quickselect!)>
 
   <subsection|Hashtabellen>
@@ -62,9 +62,9 @@
   Falls
 
   <\itemize>
-    <item>einfaches gleichmässiges Hashing verwendet wird
+    <item>einfaches gleichmssiges Hashing verwendet wird
 
-    <item>eine doppelt verkettete Liste zur Kollisionsauflösung verwendet
+    <item>eine doppelt verkettete Liste zur Kollisionsauflsung verwendet
     wird
 
     <item>die Anzahl der Slots proportional zur Anzahl der gespeicherten
@@ -80,15 +80,15 @@
 
   Annahme: Hashwertberechnung in <math|\<Theta\><around*|(|1|)>>.
 
-  Belegungsfaktor <math|\<alpha\>=<frac|m|n>> gibt die mittlere Länge einer
-  Liste an. Erwartete Anzahl Sondierungen bei erfolgloser Suche beträgt also
+  Belegungsfaktor <math|\<alpha\>=<frac|m|n>> gibt die mittlere Lnge einer
+  Liste an. Erwartete Anzahl Sondierungen bei erfolgloser Suche betrgt also
   <math|\<alpha\>>.
 
-  Die erwartete Anzahl Sondierungen für eine erfolgreiche Suche beträgt
+  Die erwartete Anzahl Sondierungen fr eine erfolgreiche Suche betrgt
   <math|1+<frac|\<alpha\>|2>+<frac|\<alpha\>|2*m>>.
   (<math|\<Theta\><around*|(|1+\<alpha\>|)>>)
 
-  <strong|Einfügen eines Elements findet am Anfang der verketteten Liste
+  <strong|Einfgen eines Elements findet am Anfang der verketteten Liste
   statt!>
 
   \ 
@@ -100,12 +100,12 @@
   <big-table|<block*|<tformat|<table|<row|<cell|Operation>|<cell|Anzahl
   Sondierungen im Mittel>>|<row|<cell|Suche
   (erfolglos)>|<cell|<math|<frac|1|1-\<alpha\>>>>>|<row|<cell|Suche
-  (erfolgreich)>|<cell|<math|<frac|1|\<alpha\>>\<cdot\>ln<around*|(|1-\<alpha\>|)>>>>|<row|<cell|Einfügen>|<cell|<math|<frac|1|1-\<alpha\>>>>>>>>|Laufzeiten
+  (erfolgreich)>|<cell|<math|<frac|1|\<alpha\>>\<cdot\>ln<around*|(|1-\<alpha\>|)>>>>|<row|<cell|Einfgen>|<cell|<math|<frac|1|1-\<alpha\>>>>>>>>|Laufzeiten
   von Hashoperationen mit offener Adressierung. Es wird angenommen, dass nach
-  jedem Schlüssel mit gleicher Wahrscheinlichkeit gesucht wird.>
+  jedem Schlssel mit gleicher Wahrscheinlichkeit gesucht wird.>
 
-  Offene Adressierung bietet Speichervorteile (Platz für Zeiger bei
-  verketteten Listen kann für zusätzlichen Speicher genutzt werden) und ist
+  Offene Adressierung bietet Speichervorteile (Platz fr Zeiger bei
+  verketteten Listen kann fr zustzlichen Speicher genutzt werden) und ist
   Cache-effizienter.
 
   <subsubsection|Hashfunktionen>
@@ -113,7 +113,7 @@
   <\description>
     <item*|Divisionsmethode><math|h<around*|(|k|)>=k mod m>
 
-    Geeignete Wahl für <math|m> (Hashtabellengrösse): Primzahl, die nicht
+    Geeignete Wahl fr <math|m> (Hashtabellengrsse): Primzahl, die nicht
     nahe an einer Zweierpotenz liegt.
 
     <item*|Multiplikationsmethode><math|h<around*|(|k|)>=<around*|\<lfloor\>|m*<around*|(|k\<cdot\>A
@@ -139,19 +139,19 @@
 
     <item*|Doppeltes Hashing><math|h<around*|(|k,i|)>=<around*|(|h<rprime|'><around*|(|k|)>+i\<cdot\>h<rprime|''><around*|(|k|)>|)>>
 
-    mit zusätzlicher Hashfunktion <math|h<rprime|''><around*|(|k|)>>, deren
+    mit zustzlicher Hashfunktion <math|h<rprime|''><around*|(|k|)>>, deren
     Wert teilerfremd zu <math|h<rprime|'><around*|(|k|)>> sein muss.
 
     Wenn <math|m> Primzahl: <math|h<rprime|'><around*|(|k|)>=k mod m>
     (Divisionsmethode), <math|h<rprime|''><around*|(|k|)>=1+<around*|(|k mod
-    <around*|(|m-1|)>|)>> erfüllen diese Bedingung.
+    <around*|(|m-1|)>|)>> erfllen diese Bedingung.
   </description>
 
-  <subsection|Suchbäume>
+  <subsection|Suchbume>
 
   <big-table|<block*|<tformat|<table|<row|<cell|<strong|Datenstruktur>>|<cell|<strong|Operation>>|<cell|<strong|Best
   Case>>|<cell|<strong|Average Case>>|<cell|<strong|Worst
-  Case>>>|<row|<cell|Binärer Suchbaum>|<cell|Search>|<cell|>|<cell|<math|O<around*|(|lg
+  Case>>>|<row|<cell|Binrer Suchbaum>|<cell|Search>|<cell|>|<cell|<math|O<around*|(|lg
   n|)>> [balanciert]>|<cell|<math|O<around*|(|n|)>>>>|<row|<cell|>|<cell|Insert>|<cell|>|<cell|<math|O<around*|(|lg
   n|)>> [balanciert]>|<cell|<math|O<around*|(|n|)>>>>|<row|<cell|>|<cell|Delete>|<cell|>|<cell|<math|O<around*|(|lg
   n|)>> [balanciert]>|<cell|<math|O<around*|(|n|)>>>>|<row|Rot-Schwarz-Baum|<cell|Search>|<cell|>|<cell|<math|O<around*|(|lg
@@ -159,7 +159,7 @@
   n|)>>>|<cell|<math|O<around*|(|lg n|)>>>>|<row|<cell|>|<cell|Delete>|<cell|>|<cell|<math|O<around*|(|lg
   n|)>>>|<cell|<math|O<around*|(|lg n|)>>>>|<row|<cell|B-Baum>|<cell|Search>|<cell|>|<cell|<math|O<around*|(|lg
   m\<cdot\>lg n|)>>>|<cell|>>|<row|<cell|(max. <math|m>
-  Einträge/Knoten)>|<cell|Insert>|<cell|>|<cell|>|<cell|<math|O<around*|(|m\<cdot\>lg
+  Eintrge/Knoten)>|<cell|Insert>|<cell|>|<cell|>|<cell|<math|O<around*|(|m\<cdot\>lg
   n|)>>>>|<row|<cell|>|<cell|Delete>|<cell|>|<cell|>|<cell|<math|O<around*|(|m\<cdot\>lg
   n|)>>>>>>>|>
 
@@ -168,35 +168,35 @@
   <big-table|<block*|<tformat|<cwith|3|3|1|3|cell-bborder|1pt>|<cwith|7|7|1|3|cell-bborder|1pt>|<table|<row|<cell|Tiefensuche>|<cell|<math|\<Theta\><around*|(|<around*|\||V|\|>+<around*|\||E|\|>|)>>>|<cell|>>|<row|<cell|Topologische
   Sortierung>|<cell|<math|\<Theta\><around*|(|<around*|\||V|\|>+<around*|\||E|\|>|)>>>|<cell|benutzt
   Tiefensuche>>|<row|<cell|Breitensuche>|<cell|<math|O<around*|(|<around*|\||V|\|>+<around*|\||E|\|>|)>>>|<cell|>>|<row|<cell|Bellman-Ford>|<cell|<math|O<around*|(|<around*|\||V|\|>\<cdot\><around*|\||E|\|>|)>>>|<cell|>>|<row|<cell|DAG_SHORTEST_PATHS>|<cell|<math|\<Theta\><around*|(|<around*|\||V|\|>+<around*|\||E|\|>|)>>>|<cell|benutzt
-  top. Sortierung>>|<row|<cell|Dijkstra mit binärem
+  top. Sortierung>>|<row|<cell|Dijkstra mit binrem
   Min-Heap>|<cell|<math|O<around*|(|<around*|(|<around*|\||V|\|>+<around*|\||E|\|>|)>\<cdot\>lg<around*|\||V|\|>|)>>>|<cell|>>|<row|<cell|Dijkstra
   mit Fibonacci-Heap>|<cell|<math|O<around*|(|<around*|\||V|\|>\<cdot\>lg<around*|\||V|\|>+<around*|\||E|\|>|)>>>|<cell|>>|<row|<cell|MST-Kruskal>|<cell|<math|O<around*|(|<around*|\||E|\|>\<cdot\>lg<around*|\||V|\|>|)>>>|<cell|>>|<row|<cell|MST-Prim>|<cell|<math|O<around*|(|<around*|\||E|\|>\<cdot\>lg<around*|\||V|\|>|)>>>|<cell|mit
-  binärem Min-Heap>>>>>|Laufzeiten von Graphenalgorithmen>
+  binrem Min-Heap>>>>>|Laufzeiten von Graphenalgorithmen>
 
-  In <em|zusammenhängenden> Graphen laufen Tiefensuche, Breitensuche etc. in
-  <math|O<around*|(|<around*|\||E|\|>|)>>, da für die Anzahl der Kanten gilt
+  In <em|zusammenhngenden> Graphen laufen Tiefensuche, Breitensuche etc. in
+  <math|O<around*|(|<around*|\||E|\|>|)>>, da fr die Anzahl der Kanten gilt
   <math|<around*|\||E|\|>\<geqslant\><around*|\||V|\|>+1>, somit
   <math|<around*|\||V|\|>\<in\>O<around*|(|<around*|\||E|\|>|)>>.
 
   <paragraph|Algorithmus von Kruskal>
 
   Benutzt Union-Find-Datenstrukturen (Strukturen zur Verwaltung disjunkter
-  Mengen), um den MST aufzubauen: Zu Anfang wird für jeden Knoten eine eigene
+  Mengen), um den MST aufzubauen: Zu Anfang wird fr jeden Knoten eine eigene
   Komponente erzeugt (<math|n> mal MAKE_SET), dann wird in aufsteigender
   Reihenfolge der Kantengewichte jede Kante, die zwei Knoten aus
-  unterschiedlichen Mengen verbindet, zum MST hinzugefügt. Diese Mengen
+  unterschiedlichen Mengen verbindet, zum MST hinzugefgt. Diese Mengen
   werden dann vereinigt.
 
-  <strong|Vorteile:> Gut für Graphen mit <math|<around*|\||E|\|>\<in\>O<around*|(|<around*|\||V|\|>|)>>
+  <strong|Vorteile:> Gut fr Graphen mit <math|<around*|\||E|\|>\<in\>O<around*|(|<around*|\||V|\|>|)>>
 
   <paragraph|Algorithmus von Prim -- MST von einem Knoten aus bilden>
 
-  Benutzt eine Prioritätswarteschlange, in der die Knoten des Graphen
-  gespeichert sind. Der Schlüssel ist dabei die minimale Distanz zum
+  Benutzt eine Priorittswarteschlange, in der die Knoten des Graphen
+  gespeichert sind. Der Schlssel ist dabei die minimale Distanz zum
   aktuellen MST. In jedem Schritt wird die Kante zum Knoten mit minimaler
-  Distanz zum MST in den Spannbaum eingefügt.
+  Distanz zum MST in den Spannbaum eingefgt.
 
-  <strong|Vorteile:> Gut für Graphen mit vielen Kanten, asymptotisch gut
+  <strong|Vorteile:> Gut fr Graphen mit vielen Kanten, asymptotisch gut
 
   <subsection|Zeugs>
 
@@ -217,15 +217,15 @@
 
   <subsubsection|Dynamische Programmierung>
 
-  Zwei Ansätze:
+  Zwei Anstze:
 
   <\description>
-    <item*|Bottom-Up-Methode>Kleinste Teilprobleme zuerst lösen, Ergebnisse
-    in Tabelle speichern. Beim Lösen eines Teilproblems stehen die Lösungen
-    aller Unterprobleme zur Verfügung.
+    <item*|Bottom-Up-Methode>Kleinste Teilprobleme zuerst lsen, Ergebnisse
+    in Tabelle speichern. Beim Lsen eines Teilproblems stehen die Lsungen
+    aller Unterprobleme zur Verfgung.
 
-    <item*|Top-Down-Memoisation>Problem rekursiv lösen, dabei jedoch
-    Zwischenergebnisse in Tabelle speichern und vor dem Lösen eines
+    <item*|Top-Down-Memoisation>Problem rekursiv lsen, dabei jedoch
+    Zwischenergebnisse in Tabelle speichern und vor dem Lsen eines
     Teilproblems nachschauen, ob das Zwischenergebnis schon einmal
     vorberechnet wurde.
   </description>
@@ -271,26 +271,26 @@
 <\auxiliary>
   <\collection>
     <\associate|table>
-      <tuple|normal|Übersicht der Sortierverfahren.
+      <tuple|normal|bersicht der Sortierverfahren.
       <with|mode|<quote|math>|n> = Anzahl zu sortierender Elemente,
       <with|mode|<quote|math>|k> = Anzahl diskreter Werte, die von einem
-      Schlüssel (Countingsort) bzw. einer Stelle des Schlüssels (Radixsort)
-      angenommen werden können, <with|mode|<quote|math>|d> = Anzahl Stellen
-      des Schlüssels.|<pageref|auto-3>>
+      Schlssel (Countingsort) bzw. einer Stelle des Schlssels (Radixsort)
+      angenommen werden knnen, <with|mode|<quote|math>|d> = Anzahl Stellen
+      des Schlssels.|<pageref|auto-3>>
 
-      <tuple|normal|Darstellungsmöglichkeiten von Graphen|<pageref|auto-6>>
+      <tuple|normal|Darstellungsmglichkeiten von Graphen|<pageref|auto-6>>
 
       <tuple|normal|Laufzeiten von Heap-Operationen|<pageref|auto-9>>
 
       <tuple|normal|Laufzeiten von Feldoperationen.
-      Select(<with|mode|<quote|math>|k>) wählt das Element mit Rang
+      Select(<with|mode|<quote|math>|k>) whlt das Element mit Rang
       <with|mode|<quote|math>|k> aus (Quickselect!)|<pageref|auto-11>>
 
       <tuple|normal|Laufzeiten von Hashoperationen mit
       Verkettung|<pageref|auto-13>>
 
       <tuple|normal|Laufzeiten von Hashoperationen mit offener Adressierung.
-      Es wird angenommen, dass nach jedem Schlüssel mit gleicher
+      Es wird angenommen, dass nach jedem Schlssel mit gleicher
       Wahrscheinlichkeit gesucht wird.|<pageref|auto-14>>
 
       <tuple|normal||<pageref|auto-18>>
@@ -302,7 +302,7 @@
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-1><vspace|0.5fn>
 
-      <with|par-left|<quote|1.5fn>|Übersicht Sortieralgorithmen
+      <with|par-left|<quote|1.5fn>|bersicht Sortieralgorithmen
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-2>>
 
@@ -337,7 +337,7 @@
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-16>>
 
-      <with|par-left|<quote|1.5fn>|Suchbäume
+      <with|par-left|<quote|1.5fn>|Suchbume
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-17>>
 
